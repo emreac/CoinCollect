@@ -23,9 +23,9 @@ public class EnemyUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
-            Destroy(this.gameObject);
-        SceneManager.LoadScene("GameScene");
+        //if (other.tag == "Player")
+          //  Destroy(this.gameObject);
+      //  SceneManager.LoadScene("GameScene");
     }
 
 

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Lantern
   - fakePlayer
+  - Enemy
   layers:
   - Default
   - TransparentFX
