@@ -528,7 +528,6 @@ MonoBehaviour:
   player: {fileID: 334105088}
   coinScore: 0
   velocity: 1.4
-  text: {fileID: 1223520986}
   movementSpeed: 3
   boostTimer: 0
   boosting: 0
@@ -890,6 +889,7 @@ MonoBehaviour:
   collectEffect: {fileID: 1025660404}
   clickEffect: {fileID: 1181392046}
   scoreText: {fileID: 1223520986}
+  gameOverScoreText: {fileID: 1103579943}
   scoreLast: 0
   movementSpeed: 0
 --- !u!54 &524294215
@@ -6497,7 +6497,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Score
 --- !u!222 &1103579944
 CanvasRenderer:
   m_ObjectHideFlags: 0

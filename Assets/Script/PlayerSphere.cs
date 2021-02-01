@@ -21,6 +21,7 @@ public class PlayerSphere : MonoBehaviour
     public ParticleSystem clickEffect;
 
     public Text scoreText;
+    public Text gameOverScoreText;
     private float score;
     private int scoreInt;
     public int scoreLast;
@@ -63,6 +64,7 @@ public class PlayerSphere : MonoBehaviour
         scoreInt = (int)score;
         scoreLast = scoreInt * 10;
         scoreText.GetComponent<Text>().text = "Score: " + scoreLast;
+        gameOverScoreText.GetComponent<Text>().text = "Score: " + scoreLast;
        
  
         if (currentHealth <= 0)

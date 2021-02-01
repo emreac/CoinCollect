@@ -12,7 +12,7 @@ public class PlayerSprite : MonoBehaviour
 
     public float velocity = 1;
     private Rigidbody2D rb;
-    public Text text;
+    private Text text;
     public static CoinCounter instance;
 
 
