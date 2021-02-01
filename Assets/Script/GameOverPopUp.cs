@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameOverPopUp : MonoBehaviour
 {
@@ -12,16 +13,19 @@ public class GameOverPopUp : MonoBehaviour
     public Text scoreText;
     public int scoreLast;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Setup (int scoreLast)
     {
-        
+        gameObject.SetActive(true);
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    public void RestartButton()
     {
-        scoreText.GetComponent<Text>().text = "Score: " + scoreLast;
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void ExitButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
 }

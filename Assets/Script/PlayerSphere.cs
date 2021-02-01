@@ -7,9 +7,10 @@ using UnityEngine.SceneManagement;
 public class PlayerSphere : MonoBehaviour
 {
 
-  
-    public CoinCounter coinCounter;
+    public GameOverPopUp GameOverPopUp;
+    private CoinCounter coinCounter;
 
+    public PlayerSprite PlayerSprite;
 
     public HealthBar healthBar;
 
@@ -66,14 +67,23 @@ public class PlayerSphere : MonoBehaviour
  
         if (currentHealth <= 0)
         {
+            GameOver();
             Destroy(this.gameObject);
-            SceneManager.LoadScene("GameScene");
+            Destroy(PlayerSprite);
+          
+           
+       //     GameOver();
+          //  SceneManager.LoadScene("GameScene");
           
         }
         
     }
 
 
+    public void GameOver()
+    {
+        GameOverPopUp.Setup(scoreLast);
+    }
  
 
 

@@ -16,6 +16,8 @@ public class PlayerSprite : MonoBehaviour
     public static CoinCounter instance;
 
 
+
+
     //Movement
     public float movementSpeed;
     public float boostTimer;
@@ -28,12 +30,10 @@ public class PlayerSprite : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-   
+
 
     }
 
-
-   
 
 
 
@@ -41,8 +41,8 @@ public class PlayerSprite : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+     
 
-        
 
 
         //Movement Right
