@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerSphere : MonoBehaviour
 {
-
+    public NextLevelControl NextLevelControl;
     public GameOverPopUp GameOverPopUp;
     private CoinCounter coinCounter;
 
@@ -20,6 +20,7 @@ public class PlayerSphere : MonoBehaviour
     public ParticleSystem collectEffect;
     public ParticleSystem clickEffect;
 
+    public Text scoreTextNewLevel;
     public Text scoreText;
     public Text gameOverScoreText;
     private float score;
@@ -27,6 +28,7 @@ public class PlayerSphere : MonoBehaviour
     public int scoreLast;
     
     public float movementSpeed;
+
 
 
     private void Start()
@@ -65,6 +67,17 @@ public class PlayerSphere : MonoBehaviour
         scoreLast = scoreInt * 10;
         scoreText.GetComponent<Text>().text = "Score: " + scoreLast;
         gameOverScoreText.GetComponent<Text>().text = "Score: " + scoreLast;
+        scoreTextNewLevel.GetComponent<Text>().text = "You Have Reached " + scoreLast + " Points" ;
+
+        if(scoreLast >= 100)
+        {
+            NextLevel();
+            Destroy(this.gameObject);
+            Destroy(PlayerSprite);
+
+
+
+        }
        
  
         if (currentHealth <= 0)
@@ -87,6 +100,10 @@ public class PlayerSphere : MonoBehaviour
         GameOverPopUp.Setup(scoreLast);
     }
  
+    public void NextLevel()
+    {
+        NextLevelControl.Setup(scoreLast);
+    }
 
 
     private void OnTriggerEnter(Collider other)
@@ -111,7 +128,10 @@ public class PlayerSphere : MonoBehaviour
     }
 
 
+    void NextLevelParticles()
+    {
 
+    }
 
     void takeDamege(int damage)
     {
