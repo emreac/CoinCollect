@@ -8,7 +8,9 @@ public class Level2Button : MonoBehaviour
    
     public void GoLevel2()
     {
-        SceneManager.LoadScene("GameScene2");
+        
+       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+      
     }
 
     public void GoMainMenu()

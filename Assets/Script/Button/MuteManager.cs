@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class MuteManager : MonoBehaviour
 {
-
+    public static MuteManager mtMan;
     private bool isMuted;
 
     // Start is called before the first frame update
     void Start()
     {
+        mtMan = this;
         isMuted = false;
     }
 
@@ -19,5 +20,7 @@ public class MuteManager : MonoBehaviour
         AudioListener.pause = isMuted;
 
     }
+
+    
     
 }
